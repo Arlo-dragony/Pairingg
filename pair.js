@@ -56,7 +56,7 @@ router.get('/', async (req, res) => {
                     const data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
                     await delay(8000);
                     const b64data = Buffer.from(data).toString('base64');
-                    const session = await client.sendMessage(client..user.id, { text: data });
+                    const session = await client.sendMessage(client.user.id, { text: data });
 
                     // Send message after session
                     await client.sendMessage(client.user.id, {text: `Raven has been linked to your WhatsApp account! Do not share this session_id with anyone. 
